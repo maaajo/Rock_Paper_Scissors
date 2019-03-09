@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
@@ -13,27 +14,32 @@
             <h1 id="title">Welcome to Rock Paper Scissors, the Game!</h1>
         </section>
         <section id="game-score">
-            <div class="score right">
-                <h3>Player Score:</h3>
-                <div class="scorecard" id="player_score">
-                    0
+            <div class="score">
+                <div class="score-header">
+                    <h3>Player</h3>
+                    <h3>Computer</h3><br>
                 </div>
-            </div>
-            <div class="score left">
-                <h3>Computer Score:</h3>
-                <div class="scorecard" id="computer_score">
-                    0
+                <div class="scorecards">
+                    <div class="scorecard" id="player_score">
+                        0
+                    </div>
+                    <span> : </span>
+                    <div class="scorecard" id="computer_score">
+                        0
+                    </div>
                 </div>
             </div>
         </section>
         <section id="game-selection">
             <h4>Please choose your pick to begin: </h4>
             <div class="selection-buttons">
-                <button type="submit" class="btn" id="rock" onclick="runGame(this.id)">Rock</button>
-                <button type="submit" class="btn" id="paper" onclick="runGame(this.id)">Paper</button>
-                <button type="submit" class="btn" id="scissors" onclick="runGame(this.id)">Scissors</button>
+                <i class="fas fa-hand-rock game-icon" id="rock" title="Rock" onclick="runGame(this.id)"></i>
+                <i class="fas fa-hand-paper game-icon" id="paper" title="Paper" onclick="runGame(this.id)"></i>
+                <i class="fas fa-hand-scissors game-icon" id="scissors" title="Scissors" onclick="runGame(this.id)"></i>
             </div>
-            <p id="game-outcome"></p>
+            <div class="game-outcome-wrapper">
+                <p id="game-outcome"></p>
+            </div>
         </section>
     </main>
     <script src="js/main.js"></script>
