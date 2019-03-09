@@ -4,74 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-
-    <script>
-        let possibleSelections = ["rock", "paper", "scissors"];
-        function computerPlay () {
-            let randomNumber = Math.floor(Math.random() * possibleSelections.length);
-            return possibleSelections[randomNumber][0].toUpperCase() + possibleSelections[randomNumber].slice(1).toLowerCase();
-        }
-        function singleRoundGame (playerSelection, computerSelection) {
-            if (playerSelection.toLowerCase() === "rock".toLowerCase() && computerSelection.toLowerCase() === "scissors".toLowerCase()) {
-                return "You win! " + playerSelection + " beats " + computerSelection;
-            }
-            else if (playerSelection.toLowerCase() === "rock".toLowerCase() && computerSelection.toLowerCase() === "paper".toLowerCase()) {
-                return "You lose! " + computerSelection + " beats " + playerSelection;
-            }
-            else if (playerSelection.toLowerCase() === "paper".toLowerCase() && computerSelection.toLowerCase() === "rock".toLowerCase()) {
-                return "You win! " + playerSelection + " beats " + computerSelection;
-            }
-            else if (playerSelection.toLowerCase() === "paper".toLowerCase() && computerSelection.toLowerCase() === "scissors".toLowerCase()) {
-                return "You lose! " + computerSelection + " beats " + playerSelection;
-            }
-            else if (playerSelection.toLowerCase() === "scissors".toLowerCase() && computerSelection.toLowerCase() === "rock".toLowerCase()) {
-                return "You lose! " + computerSelection + " beats " + playerSelection;
-            }
-            else if (playerSelection.toLowerCase() === "scissors".toLowerCase() && computerSelection.toLowerCase() === "paper".toLowerCase()) {
-                return "You win! " + playerSelection + " beats " + computerSelection;
-            }
-            else {
-                return "Draw!";
-            }
-        }
-        function game() {
-            let turn = 1;
-            let playerScore = 0
-            let computerScore = 0;
-            let maxTurns = 5;
-            let playerSelection = prompt("Please type your pick: ");
-            if (playerSelection == "" || playerSelection == null) {
-                console.log("Nothing typed or clicked cancel. Aborting...");
-                return;
-            }
-            while (turn <= maxTurns) {
-                let properCasePlayerSel = playerSelection[0].toUpperCase() + playerSelection.slice(1).toLowerCase();
-                while (possibleSelections.indexOf(playerSelection.toLowerCase()) == -1) {
-                    alert("Wrong! Please type your answer again!");
-                    playerSelection = prompt("Please type your pick: ");
-                }
-                let result = singleRoundGame(properCasePlayerSel, computerPlay());
-                if (result.includes("win".toLowerCase())) {
-                    playerScore++;
-                }
-                else if (result.includes("lose".toLowerCase())) {
-                    computerScore++;
-                }
-                console.log(result);
-                if (turn === maxTurns) {
-                    console.log("Final Results:\n\tPlayer: " + playerScore + "\n\tComputer: " + computerScore)
-                }
-                else {
-                    console.log("Results:\n\tPlayer: " + playerScore + "\n\tComputer: " + computerScore)
-                    playerSelection = prompt("Please type your pick: ");
-                }
-                turn++;
-            }
-
-        }
-    </script>
+    <main>
+        <section id="welcome">
+            <h1 id="title">Welcome to Rock Paper Scissors, the Game!</h1>
+        </section>
+        <section id="game-score">
+            <div class="score right">
+                <h3>Player Score:</h3>
+                <div class="scorecard" id="player_score">
+                    0
+                </div>
+            </div>
+            <div class="score left">
+                <h3>Computer Score:</h3>
+                <div class="scorecard" id="computer_score">
+                    0
+                </div>
+            </div>
+        </section>
+        <section id="game-selection">
+            <h4>Please choose your pick to begin: </h4>
+            <div class="selection-buttons">
+                <button type="submit" class="btn" id="rock" onclick="runGame(this.id)">Rock</button>
+                <button type="submit" class="btn" id="paper" onclick="runGame(this.id)">Paper</button>
+                <button type="submit" class="btn" id="scissors" onclick="runGame(this.id)">Scissors</button>
+            </div>
+            <p id="game-outcome"></p>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
 </body>
 </html>
