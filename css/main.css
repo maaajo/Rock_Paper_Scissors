@@ -158,6 +158,9 @@ main {
     html {
         font-size: 11px;
     }
+    main {
+        width: 90%;
+    }
     #title {
         font-size: 2.5rem;
     }
@@ -199,6 +202,9 @@ main {
     html {
         font-size: 13px;
     }
+    main {
+        width: 90%;
+    }
     .score {
         width: 90%;
     }
@@ -211,6 +217,9 @@ main {
 }
 
 @media (min-width: 801px) and (max-width: 1024px) {
+    main {
+        width: 90%;
+    }
     .score {
         width: 90%;
     }
