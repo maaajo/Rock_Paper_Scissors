@@ -47,37 +47,37 @@ function updateGameOutcomeMessage(message) {
 function singleRoundGame (playerSelection, computerSelection) {
     changeRound();
     if (playerSelection.toLowerCase() === "rock".toLowerCase() && computerSelection.toLowerCase() === "scissors".toLowerCase()) {
-        let gameOutcome = "Round: " + round + "<br>You win!<br>Your selection: " + gameIcons[playerSelection.toLowerCase()] + ", beats Computer selection: " + gameIcons[computerSelection.toLowerCase()];
+        let gameOutcome = "<span class=\"win\">Round: " + round + "<br>You win!<br>Your selection: " + gameIcons[playerSelection.toLowerCase()] + ", beats Computer selection: " + gameIcons[computerSelection.toLowerCase()] + "</span>";
         givePlayerPoint();
         updateScore("player");
         updateGameOutcomeMessage(gameOutcome);
     }
     else if (playerSelection.toLowerCase() === "rock".toLowerCase() && computerSelection.toLowerCase() === "paper".toLowerCase()) {
-        let gameOutcome = "Round: " + round + "<br>" + "You lose!<br>Computer selection: " + gameIcons[computerSelection.toLowerCase()] + ", beats Your selection: " + gameIcons[playerSelection.toLowerCase()];
+        let gameOutcome = "<span class=\"lose\">Round: " + round + "<br>" + "You lose!<br>Computer selection: " + gameIcons[computerSelection.toLowerCase()] + ", beats Your selection: " + gameIcons[playerSelection.toLowerCase()] + "</span>";
         giveComputerPoint();
         updateScore("computer");
         updateGameOutcomeMessage(gameOutcome);
     }
     else if (playerSelection.toLowerCase() === "paper".toLowerCase() && computerSelection.toLowerCase() === "rock".toLowerCase()) {
-        let gameOutcome = "Round: " + round + "<br>" + "You win!<br>Your selection: " + gameIcons[playerSelection.toLowerCase()] + ", beats Computer selection: " + gameIcons[computerSelection.toLowerCase()];
+        let gameOutcome = "<span class=\"win\">Round: " + round + "<br>" + "You win!<br>Your selection: " + gameIcons[playerSelection.toLowerCase()] + ", beats Computer selection: " + gameIcons[computerSelection.toLowerCase()] + "</span>";
         givePlayerPoint();
         updateScore("player");
         updateGameOutcomeMessage(gameOutcome);
     }
     else if (playerSelection.toLowerCase() === "paper".toLowerCase() && computerSelection.toLowerCase() === "scissors".toLowerCase()) {
-        let gameOutcome = "Round: " + round + "<br>" + "You lose!<br>Computer selection: " + gameIcons[computerSelection.toLowerCase()] + ", beats Your selection: " + gameIcons[playerSelection.toLowerCase()];
+        let gameOutcome = "<span class=\"lose\">Round: " + round + "<br>" + "You lose!<br>Computer selection: " + gameIcons[computerSelection.toLowerCase()] + ", beats Your selection: " + gameIcons[playerSelection.toLowerCase()] + "</span>";
         giveComputerPoint();
         updateScore("computer");
         updateGameOutcomeMessage(gameOutcome);
     }
     else if (playerSelection.toLowerCase() === "scissors".toLowerCase() && computerSelection.toLowerCase() === "rock".toLowerCase()) {
-        let gameOutcome = "Round: " + round + "<br>" + "You lose!<br>Computer selection: " + gameIcons[computerSelection.toLowerCase()] + ", beats Your selection: " + gameIcons[playerSelection.toLowerCase()];
+        let gameOutcome = "<span class=\"lose\">Round: " + round + "<br>" + "You lose!<br>Computer selection: " + gameIcons[computerSelection.toLowerCase()] + ", beats Your selection: " + gameIcons[playerSelection.toLowerCase()] + "</span>";
         giveComputerPoint();
         updateScore("computer");
         updateGameOutcomeMessage(gameOutcome);
     }
     else if (playerSelection.toLowerCase() === "scissors".toLowerCase() && computerSelection.toLowerCase() === "paper".toLowerCase()) {
-        let gameOutcome =  "Round: " + round + "<br>" + "You win!<br>Your selection: " + gameIcons[playerSelection.toLowerCase()] + ", beats Computer selection: " + gameIcons[computerSelection.toLowerCase()];
+        let gameOutcome =  "<span class=\"win\">Round: " + round + "<br>" + "You win!<br>Your selection: " + gameIcons[playerSelection.toLowerCase()] + ", beats Computer selection: " + gameIcons[computerSelection.toLowerCase()] + "</span>";
         givePlayerPoint();
         updateScore("player");
         updateGameOutcomeMessage(gameOutcome);
