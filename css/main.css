@@ -106,7 +106,6 @@ main {
     display: flex;
     justify-content: center;
     z-index: 2;
-    flex-wrap: wrap;
 }
 
 .game-icon {
@@ -159,6 +158,9 @@ main {
     html {
         font-size: 11px;
     }
+    #title {
+        font-size: 2.5rem;
+    }
     .score {
         width: 90%;
     }
@@ -186,6 +188,10 @@ main {
     #game-outcome {
         width: 90%;
         font-size: 1.8rem;
+    }
+    .game-icon {
+        font-size: 5rem;
+        margin: 0 2rem;
     }
 }
 
